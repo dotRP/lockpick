@@ -18,14 +18,14 @@ RegisterNUICallback('failed', function()
 end)
 
 RegisterCommand('lockpicktry', function()
-    local result = exports['lockpick']:startLockpick()
+    local result = exports['lockpick']:startLockpick(1)
     print(result, 'lockpicking result')
 end)
 
 exports('startLockpick', function(tries)
     SendNUIMessage({
         start = true,
-        tries = tries
+        tries = 1
     })
     SetNuiFocus(true, true)
 
